@@ -9,7 +9,7 @@ const FlippableCard = ({ title, icon, backImage, backText }) => {
         {/* Front */}
         <div className="flip-card-front flex flex-col items-center justify-center bg-white rounded-xl shadow-lg">
           <img src={icon} alt="Icon" className="w-16 h-16 mb-4" />
-          <p className="text-lg font-bold">{title}</p>
+          <p className="text-lg font-bold text-black">{title}</p>
         </div>
 
         {/* Back */}
