@@ -8,32 +8,32 @@ const CardsSection = () => {
         {
           title: 'PERSONAL DEVELOPMENT',
           icon: './tiglPage/personal.png',
-          backImage: '/images/chatbot-detail.png',
+          backImage: 'tiglPage/personal.jpg',
           backText: 'Engage users with smart chatbots.',
         },
         {
           title: 'PROFESSIONAL DEVELOPMENT',
           icon: 'tiglPage/professional.png',
-          backImage: '/images/ai-tools.png',
+          backImage: 'tiglPage/professional.jpg',
           backText: 'Boost productivity using AI tools.',
         },
         {
           title: 'BUSINESS DEVELOPMENT',
           icon: 'tiglPage/business.png',
-          backImage: '/images/automation.png',
+          backImage: 'tiglPage/business.jpg',
           backText: 'Automate workflows with ease.',
         },
         {
           title: 'LEADERSHIP DEVELOPMENT',
           icon: 'tiglPage/leadership.png',
-          backImage: '/images/analytics.png',
+          backImage: 'tiglPage/leadership.jpg',
           backText: 'Gain insights with smart analytics.',
         },
       ];
       console.log("CardsSection", cardsData);
   return (
     
-    <section className=" grid mt-10 grid-cols-1 md:grid-cols-2 gap-6 w-[90%] lg:grid-cols-4">
+    <section className=" grid mt-20 grid-cols-1 md:grid-cols-2 gap-6 w-[90%] lg:grid-cols-4 bg-gray-50 py-10">
         {cardsData && cardsData.map((card, index) => (
         <FlippableCard
           key={index}

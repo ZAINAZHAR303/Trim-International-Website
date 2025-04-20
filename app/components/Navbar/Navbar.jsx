@@ -1,74 +1,72 @@
+"use client";
 
-// import { Link } from "react-router-dom";
 import Link from "next/link";
 import ToggleBtn from "../ToggleBtn";
+import useMenuStore from "../../store/menuStore";
+
 const Navbar = () => {
-  
+  const isMenuOpen = useMenuStore((state) => state.isMenuOpen);
 
   return (
-    <nav className="absolute inset-0 z-10 pt-8   px-12">
-      <div className="max-w-7xl mx-auto flex justify-between items-center">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
+      <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-3">
         {/* Logo */}
-        <div className="text-white h-[100px] w-[100px] font-bold text-xl">
-          <img src="kissanlogo.png" alt="Kissan Dost" className="h-[100px] w-[100px]" />
+        <div className="flex items-center space-x-2">
+          <img src="/logo.png" alt="Company Logo" className="h-10 w-auto" />
+          {/* <span className="text-xl font-semibold text-gray-800">TIGL SOAR</span> */}
         </div>
 
-        {/* Desktop Navbar Links */}
-        <div className="hidden md:flex space-x-6">
-          <Link href="/"  className=" font-poppinsMedium text-white hover:text-green-200">Home</Link>
-          <Link href="/FarmerCommunity" className=" font-poppinsMedium text-white hover:text-green-200">Community</Link>
-          <Link href="/loanfinder"  className=" font-poppinsMedium text-white hover:text-green-200">Loans</Link>
-          <Link href="/About"   className=" font-poppinsMedium text-white hover:text-green-200">About Us</Link>
-          <Link href="/Contact"  className=" font-poppinsMedium text-white hover:text-green-200">Contact Us</Link>
-          <Link href="/chatbot"  className=" font-poppinsMedium text-white hover:text-green-200">Chat Bot</Link>
+        {/* Desktop Links */}
+        <div className="hidden md:flex md:items-center space-x-6">
+          <Link href="/" className="text-gray-700 font-medium hover:text-blue-600 transition duration-300 ">
+            Home
+          </Link>
+          <Link href="/about" className="text-gray-700 font-medium hover:text-blue-600 transition duration-300 ">
+            About
+          </Link>
+          <Link href="/tigl" className="text-gray-700 font-medium hover:text-blue-600 transition duration-300 ">
+          <strong>
+            TIGL
+            </strong>
+          </Link>
+          <Link href="/tigl" className="text-gray-700 font-medium hover:text-blue-600 transition duration-300 ">
+            SOAR
+          </Link>
+          <Link href="/products" className="text-gray-700 font-medium hover:text-blue-600 transition duration-300 ">
+            Products
+          </Link>
+          <Link href="/services" className="text-gray-700 font-medium hover:text-blue-600 transition duration-300 ">
+            Services
+          </Link>
+          <Link href="/contact" className="text-white bg-blue-600 px-4 py-2 rounded-full hover:bg-blue-700 transition">
+            Contact
+          </Link>
         </div>
 
-        {/* Mobile Hamburger Menu */}
+        {/* Mobile Hamburger */}
         <div className="md:hidden">
           <ToggleBtn />
         </div>
       </div>
 
-      {/* Mobile Navbar Links */}
-      {/* <div
-  className={`md:hidden flex flex-col items-center justify-start absolute top-16 left-0 w-full bg-black bg-opacity-3 0 p-6 rounded-lg shadow-lg transform transition-all duration-300 ease-in-out ${isMenuOpen ? 'scale-100 opacity-100' : 'scale-0 opacity-0'}`}
->
-  <Link to="/"
-    
-    className="block text-white py-3 px-6 mb-4 rounded-lg hover:bg-green-500 hover:bg-opacity-30 w-[60%] font-poppinsMedium text-center hover:text-white transition-all duration-300 ease-in-out"
-  >
-    Home
-  </Link>
-  <Link to="/FarmerCommunity"
-    
-    className="block text-white py-3 px-6 mb-4 rounded-lg hover:bg-green-500 hover:bg-opacity-30 w-[60%] font-poppinsMedium text-center hover:text-white transition-all duration-300 ease-in-out"
-  >
-    Community
-  </Link>
-  <Link to="/loanfinder"
-    
-    className="block text-white py-3 px-6 mb-4 rounded-lg hover:bg-green-500 hover:bg-opacity-30 w-[60%] font-poppinsMedium text-center hover:text-white transition-all duration-300 ease-in-out"
-  >
-    Loans
-  </Link>
-  <Link to="/About"
-    
-    className="block text-white py-3 px-6 mb-4 rounded-lg hover:bg-green-500 hover:bg-opacity-30 w-[60%] font-poppinsMedium text-center hover:text-white transition-all duration-300 ease-in-out"
-  >
-    About Us
-  </Link>
-  <Link to="/Contact"
-    
-    className="block text-white py-3 px-6 mb-4 rounded-lg hover:bg-green-500 hover:bg-opacity-30 w-[60%] font-poppinsMedium text-center hover:text-white transition-all duration-300 ease-in-out"
-  >
-    Contact Us
-  </Link>
-  <Link to="/chatbot"  className="block text-white py-3 px-6 mb-4 rounded-lg hover:bg-green-500 hover:bg-opacity-30 w-[60%] font-poppinsMedium text-center hover:text-white transition-all duration-300 ease-in-out">Chat Bot</Link>
-</div> */}
-
+      {/* Mobile Menu */}
+      <div
+        className={`md:hidden flex flex-col items-center bg-white text-gray-800 absolute top-16 left-0 w-full shadow-md transition-transform duration-300  ${
+          isMenuOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
+        }`}
+      >
+        {["Home", "About", "TIGL", "SOAR", "Products", "Services", "Contact"].map((item, index) => (
+          <Link
+            key={index}
+            href={`/${item.toLowerCase() === "home" ? "" : item.toLowerCase()}`}
+            className="block w-full text-center py-3 hover:bg-blue-100 transition"
+          >
+            {item}
+          </Link>
+        ))}
+      </div>
     </nav>
   );
 };
 
 export default Navbar;
-

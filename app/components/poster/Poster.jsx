@@ -5,7 +5,7 @@ import Navbar from "../Navbar/Navbar";
 
 const Poster = () => {
   return (
-    <div className="relative w-screen h-screen  bg-slate-300 overflow-hidden">
+    <div className="relative w-screen h-screen  bg-slate-300 overflow-x-hidden-hidden">
        
      
 
@@ -24,11 +24,11 @@ const Poster = () => {
   
   <div className="absolute inset-0 flex flex-col items-center justify-center text-center  text-white px-4">
   {/* <Navbar /> */}
-  <h1 className="text-4xl md:text-6xl font-bold animate-fade-in">
-   TRIMM INSTITUTE FOR <span className="text-blue-400">GLOBAL LEADERSHIP</span>
+  <h1 className="text-4xl md:text-6xl font-bold text-white animate-fade-in">
+   TRIMM INSTITUTE FOR GLOBAL LEADERSHIP
   </h1>
-  <p className="text-lg font-light md:text-2xl mt-4 animate-slide-up">
-  Empowering you to lead transformational change.
+  <p className=" capitalize text-lg font-light md:text-2xl  mt-4 animate-slide-up">
+  Empowering you <span className="lowercase"> to </span> lead transformational change.
   </p>
 </div>
 
