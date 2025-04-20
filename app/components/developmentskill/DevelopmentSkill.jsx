@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./Developmentskill.css"
 const DevelopmentSkill = ({ title, description, image, index }) => {
   const isEven = index % 2 === 0;
 
@@ -8,14 +8,16 @@ const DevelopmentSkill = ({ title, description, image, index }) => {
       {/* Image Container with Orange Background Box */}
       <div className="relative w-full md:w-1/2 flex justify-center">
         {/* Orange Box Behind */}
-        <div className="absolute h-[500px] w-[400px] bg-orange-400 rounded-lg  -left-2 md:left-23  -bottom-2"></div>
+        {/* <div className="absolute h-[500px] w-[400px] bg-orange-400 rounded-lg  -left-2 md:left-23  -bottom-2"></div> */}
 
         {/* Main Image */}
+        
         <img
           src={image}
           alt={title}
-          className="rounded-lg shadow-lg w-[400px] max-w-md h-[500px] relative object-cover"
+          className="rounded-lg shadow-lg w-[400px] image_bg max-w-md h-[500px] relative object-cover"
         />
+        
       </div>
 
       {/* Text Content */}
