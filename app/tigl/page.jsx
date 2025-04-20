@@ -5,7 +5,7 @@ import React from 'react'
 const Tigl = () => {
   return (
     <>
-     <Poster />
+     {/* <Poster /> */}
      <Development />
     </>
   )

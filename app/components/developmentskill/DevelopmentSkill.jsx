@@ -1,5 +1,5 @@
 import React from "react";
-import "./Developmentskill.css"
+// import "./Developmentskill.css"
 const DevelopmentSkill = ({ title, description, image, index }) => {
   const isEven = index % 2 === 0;
 
