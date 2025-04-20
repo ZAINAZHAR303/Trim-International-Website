@@ -24,7 +24,7 @@ const Development = () => {
     {
       title: "Leadership Development",
       description: "Leaders aren’t born; they’re developed. Our pioneering leadership development programs are designed to sharpen your leadership skills and improve your capacity to manage complexity. Our innovative and customized approaches are specifically tailored to align with your leadership service goals. Become a leader who leaves a legacy of lasting positive change.",
-      image: "TiglPage/leadership.jpg",
+      image: "tiglPage/leadership.jpg",
     },
   ];
   return (
